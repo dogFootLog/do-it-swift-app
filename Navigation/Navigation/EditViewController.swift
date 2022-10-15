@@ -16,6 +16,8 @@ class EditViewController: UIViewController {
     
     var textWayValue: String = ""
     var textMessage: String = ""
+    
+    // 선언
     var delegate: EditDelegate?
     
     var isOn = false
