@@ -23,6 +23,38 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // Do any additional setup after loading the view.
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
+        
+        if mediaType.isEqual(to: UTType.image.identifier as NSString as String) {
+            captureImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            
+            if flagImageSave {
+                UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
+            }
+            
+            imgView.image = captureImage
+        } else if mediaType.isEqual(to: UTType.movie.identifier as NSString as String) {
+            if flagImageSave {
+                videoURL = (info[UIImagePickerController.InfoKey.mediaURL] as! URL)
+                
+                UISaveVideoAtPathToSavedPhotosAlbum(videoURL.relativePath, self, nil, nil)
+            }
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func myAlert(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let action = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func btnCaptureImageFromCamera(_ sender: UIButton) {
         if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
             flagImageSave = true
@@ -52,20 +84,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             myAlert("Photo album inaccessible", message: "Application cannot access the photo album")
         }
     }
-    
-    @IBAction func btnRecordVideoFromCamera(_ sender: UIButton) {
-            if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
-                flagImageSave = true
-                
-                imagePicker.delegate = self
-                imagePicker.sourceType = .camera
-                imagePicker.mediaTypes = [UTType.movie.identifier as String]
-                imagePicker.allowsEditing = false
-                
-                present(imagePicker, animated: true, completion: nil)
-            } else {
-                myAlert("Camera inaccessable", message: "Application cannot access the camera")
-            }
+        @IBAction func btnRecordVideoFromCamera(_ sender: UIButton) {
+        if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
+            flagImageSave = true
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.mediaTypes = [UTType.image.identifier as String]
+            imagePicker.allowsEditing = false
+            
+            present(imagePicker, animated: true, completion: nil)
+        } else {
+            myAlert("Camera inaccessable", message: "Application cannot access the camera")
+        }
     }
     
     @IBAction func btnLoadVideoFromLibrary(_ sender: UIButton) {
@@ -81,27 +112,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         } else {
             myAlert("Photo album inaccessible", message: "Application cannot access the photo album")
         }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
-        
-        if mediaType.isEqual(to: UTType.image.identifier as NSString as String) {
-            captureImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-            
-            if flagImageSave {
-                UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
-            }
-            
-            imageView.image = captureImage
-        }
-    }
-    
-    func myAlert(_ title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        let action = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
     }
 }
 

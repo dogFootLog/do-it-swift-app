@@ -45,7 +45,6 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="비디오 촬영"/>
                                                 <connections>
-                                                    <action selector="btnRecordVedioFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M1e-CU-8dV"/>
                                                     <action selector="btnRecordVideoFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9cg-eq-bsv"/>
                                                 </connections>
                                             </button>
