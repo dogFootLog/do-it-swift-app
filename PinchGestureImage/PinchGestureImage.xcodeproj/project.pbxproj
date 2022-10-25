@@ -17,6 +17,7 @@
 		514F42F9290621FF00057D59 /* PinchGestureImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F42F8290621FF00057D59 /* PinchGestureImageUITests.swift */; };
 		514F42FB290621FF00057D59 /* PinchGestureImageUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514F42FA290621FF00057D59 /* PinchGestureImageUITestsLaunchTests.swift */; };
 		514F43082906225600057D59 /* doingCss.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 514F43072906225600057D59 /* doingCss.jpeg */; };
+		514F430A29065D9D00057D59 /* LaunchScreen2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514F430929065D9D00057D59 /* LaunchScreen2.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		514F42F8290621FF00057D59 /* PinchGestureImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchGestureImageUITests.swift; sourceTree = "<group>"; };
 		514F42FA290621FF00057D59 /* PinchGestureImageUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchGestureImageUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		514F43072906225600057D59 /* doingCss.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doingCss.jpeg; sourceTree = "<group>"; };
+		514F430929065D9D00057D59 /* LaunchScreen2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen2.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				514F42E0290621FF00057D59 /* Assets.xcassets */,
 				514F42E2290621FF00057D59 /* LaunchScreen.storyboard */,
 				514F42E5290621FF00057D59 /* Info.plist */,
+				514F430929065D9D00057D59 /* LaunchScreen2.storyboard */,
 			);
 			path = PinchGestureImage;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				514F42E4290621FF00057D59 /* LaunchScreen.storyboard in Resources */,
+				514F430A29065D9D00057D59 /* LaunchScreen2.storyboard in Resources */,
 				514F42E1290621FF00057D59 /* Assets.xcassets in Resources */,
 				514F42DF290621FE00057D59 /* Main.storyboard in Resources */,
 				514F43082906225600057D59 /* doingCss.jpeg in Resources */,
@@ -444,7 +448,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PinchGestureImage/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen2;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -471,7 +475,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PinchGestureImage/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen2;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
