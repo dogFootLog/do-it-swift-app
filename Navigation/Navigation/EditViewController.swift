@@ -7,6 +7,7 @@
 
 import UIKit
 
+// scope가 프로젝트 전체가 됨
 protocol EditDelegate {
     func didMessageEditDone(_ controller: EditViewController, message: String)
     func didImageOnOffDone(_ controller: EditViewController, isOn: Bool)
